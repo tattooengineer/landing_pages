@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+
+
+    }
+
+    p {
+      margin: 0px;
+    }
+
+    body {
+      background: #210000;
+    }
+
+    p.top_line {
+      color: white;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .page_container {
+      padding: 0px 20px 30px 20px;
+    }
+
+    .carousel_box {
+      background-image: url('https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Rectangle-40003-17212802128252.png?v=1721280213');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      margin-top: 30px;
+      height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .shadow-effect {
+      background: linear-gradient(106deg, rgba(95, 1, 0, 1) 0%, rgba(197, 0, 1, 1) 49%, rgba(95, 1, 0, 1) 100%);
+      padding: 12px;
+      border-radius: 4px;
+      display: flex;
+      text-align: center;
+      min-height: 135px;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10), 0 15px 12px rgba(0, 0, 0, 0.02);
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    section.testimonials {
+      margin-top: 30px;
+    }
+
+
+    #customers-testimonials .item {
+      text-align: center;
+      /* padding: 50px; */
+      margin-bottom: 15px;
+      box-shadow: -1px 1px 9px 4px #000000e8;
+      transform: scale3d(0.6, 0.6, 1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    #customers-testimonials .owl-item.active.center .item {
+      opacity: 1;
+      transform: scale3d(1.0, 1.0, 1);
+      z-index: 999999;
+      position: relative;
+      filter: grayscale(0);
+    }
+
+    .owl-carousel .owl-item img {
+      transform-style: preserve-3d;
+      max-width: 75px;
+      margin: 0 auto 9px;
+    }
+
+    #customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+    #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+      background: white;
+      transform: translate3d(0px, -50%, 0px) scale(0.4);
+    }
+
+    #customers-testimonials.owl-carousel .owl-dots {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    #customers-testimonials.owl-carousel .owl-dots .owl-dot {
+      display: inline-block;
+    }
+
+    #customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+      background: #ffffff3d;
+      display: inline-block;
+      height: 20px;
+      border-radius: 50%;
+      transform: translate3d(0px, -50%, 0px) scale(0.4);
+      transform-origin: 50% 50% 0;
+      transition: all 250ms ease-out 0s;
+      width: 20px;
+    }
+
+    /* .owl-nav {
+			position: absolute;
+			top: 50%;
+		} */
+    .owl-nav {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      display: flex;
+      justify-content: space-between;
+      transform: translate(-50%, 50%);
+      width: 110%;
+    }
+
+    .grayscale {
+      filter: grayscale(100%);
+    }
+
+    .owl-next {
+      background: url('https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101965-17212812904036.png?v=1721281290');
+      background-size: contain;
+    }
+
+    .owl-prev {
+      background: url('https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101965-17212812904036.png?v=1721281290');
+      background-size: contain;
+      transform: rotate(180deg);
+    }
+
+    .owl-next,
+    .owl-prev {
+
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      color: white;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10), 0 15px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    p.rating_p {
+      font-size: 1.3rem;
+      color: white;
+      font-weight: 500;
+    }
+
+    p.rating_p.italic {
+      transform: skew(348deg, 0deg);
+      color: #ffffff;
+      font-weight: 400;
+    }
+
+    .vipclub_section {
+      margin-top: 20px;
+    }
+
+    .clubs-img {
+      display: flex;
+      gap: 3%;
+    }
+
+    p.last_line {
+      text-align: center;
+      color: #F8E7AD;
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+
+    .btn-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background: #058c05;
+      padding: 6px 12px;
+      color: white;
+      width: 32%;
+      font-weight: 500;
+    }
+
+    .box {
+      padding: 7px 3px;
+      border-radius: 15px;
+      width: 70%;
+      left: 50%;
+      top: 50%;
+      z-index: 99;
+      background: #fff;
+      position: fixed;
+      transform: translate(-50%, -50%);
+      box-shadow: 2px 2px 5px rgb(0 0 0);
+      display: none;
+    }
+
+    .active.box {
+      display: flex;
+    }
+
+    .top {
+      position: relative;
+    }
+
+    .top .cross {
+      position: fixed;
+      top: 3%;
+      right: 20px;
+      text-decoration: none;
+      background-image: url('https://rummy-static-content.jungleerummy.com/Content/versioned/2.0.0.1/images/version4/promotion_august_21/zenrik_images/cross-16285871594562.png?v=1628587160');
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      width: 16px;
+      height: 16px;
+      top: 6%;
+      right: 14px;
+    }
+
+    div.top::after {
+      content: "";
+      background: #0000002E;
+      position: absolute;
+      bottom: 0%;
+      left: -93%;
+      height: 1px;
+      width: 79%;
+    }
+
+    .sectionpop {
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      border-radius: 10px;
+    }
+
+    .sms {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .popp {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #2ABF1C;
+    }
+
+    .subpop {
+      font-size: 1rem;
+      padding: 10px 15px 5px;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <div class="header_banner"><img
+      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/VIP-Club-17212798843652.png?v=1721279885"
+      alt="" width="100%"></div>
+  <div class="page_container">
+    <p class="top_line">Experience a world of unlimited fun and rewards with the VIP Club. Step up for a premium Poker
+      experience.</p>
+
+    <div class="btn-section">
+      <button class="btn" id="sendLink">OPT IN</button>
+    </div>
+
+    <div class="carousel_box" id="hideformod">
+      <section class="testimonials">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="customers-testimonials" class="owl-carousel">
+
+                <!--TESTIMONIAL 1 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">I used to play poker on other apps, and then I shifted to this app. This app is
+                      the absolute best.</p>
+                    <p class="rating_p italic">- Archana Gunjal</p>
+                  </div>
+
+                </div>
+                <!--END OF TESTIMONIAL 1 -->
+                <!--TESTIMONIAL 2 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">I love the great rewards on the app, best poker gameplay as well!</p>
+                    <p class="rating_p italic">- Yash karanjekar</p>
+                  </div>
+
+                </div>
+                <!--END OF TESTIMONIAL 2 -->
+                <!--TESTIMONIAL 3 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">Once I was facing issues in my app, the customer support team was prompt to
+                      resolve the issue</p>
+                    <p class="rating_p italic">- Yasin Shaikh</p>
+                  </div>
+
+                </div>
+                <!--END OF TESTIMONIAL 3 -->
+                <!--TESTIMONIAL 4 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">This app is just awesome! The game is super smooth and gives me the authentic
+                      poker experience!</p>
+                    <p class="rating_p italic">- Samaniya Ruheen</p>
+                  </div>
+
+                </div>
+                <!--END OF TESTIMONIAL 4 -->
+                <!--TESTIMONIAL 5 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">I love playing different variants of poker on this app, it always keeps me
+                      engaged.</p>
+                    <p class="rating_p italic">- Rupak Jha</p>
+                  </div>
+
+                </div>
+                <!--END OF TESTIMONIAL 5 -->
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">The tournaments are always exciting and highly rewarding</p>
+                    <p class="rating_p italic">- Priya Sahu</p>
+                  </div>
+
+                </div>
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">Daily, weekly, and weekend poker tournaments makes me come back to the app on
+                      regular intervals</p>
+                    <p class="rating_p italic">- Sahil bhabal</p>
+                  </div>
+
+                </div>
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">Pokerstars is the best place for playing online poker</p>
+                    <p class="rating_p italic">- Sumit Sawant</p>
+                  </div>
+
+                </div>
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">The different game variants on The pokerstars app make sure that the game isn't
+                      becoming boring for me.</p>
+                    <p class="rating_p italic">- Mitali Debnath</p>
+                  </div>
+
+                </div>
+                <div class="item">
+                  <div class="shadow-effect">
+                    <img class="rating-img"
+                      src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101952-17212827078913.png?v=1721282708"
+                      alt="">
+                    <p class="rating_p">Perfect app, considering it's free and has no ads</p>
+                    <p class="rating_p italic">- Ayan Mallick</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="vipclub_section">
+      <img
+        src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101964-17212864387961.png?v=1721286439"
+        alt="" width="100%">
+
+      <div class="clubs-img">
+        <div class="club_images"><img
+            src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101961-17212865369143.png?v=1721286537"
+            alt="" width="100%"></div>
+        <div class="club_images"><img
+            src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101960-17212865825450.png?v=1721286583"
+            alt="" width="100%"></div>
+      </div>
+      <div class="clubs-img" style="margin-top:-12px;">
+        <div class="club_images"><img
+            src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101958-17212866153980.png?v=1721286616"
+            alt="" width="100%"></div>
+        <div class="club_images"><img
+            src="https://d22ueo28hfk252.cloudfront.net/Content/versioned/2.0.0.1/images/version4/promotion_july_24/zenrik_images/Group-101959-17212866379536.png?v=1721286638"
+            alt="" width="100%"></div>
+      </div>
+    </div>
+
+    <p class="last_line">Ready to be a part of the action?</p>
+
+  </div>
+  <div class="box">
+    <div class="top">
+      <a onclick="closePopUp()" class="cross"></a>
+    </div>
+    <div class="sectionpop">
+
+      <div class="sms">
+        <p class="popp">Thank you!</p>
+        <p class="subpop">Thank you for opting-in. You are now a part of the VIP Club. </p>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js'></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      "use strict";
+      // TESTIMONIALS CAROUSEL HOOK
+      $('#customers-testimonials').owlCarousel({
+        loop: true,
+        center: true,
+        items: 3,
+        margin: -100,
+        autoplay: true,
+        dots: true,
+        nav: true,
+        autoplayTimeout: 2000,
+        smartSpeed: 450,
+        navText: [],
+        responsive: {
+          0: {
+            items: 1.7
+          },
+          768: {
+            items: 1.8
+          },
+          1170: {
+            items: 3
+          }
+        },
+        onTranslated: function (event) {
+          // Remove the grayscale filter from all items
+          $('.owl-item .item').removeClass('grayscale');
+
+          // Find the active item
+          var $activeItem = $('.owl-item.active .item');
+
+          // Find the previous item and add the grayscale filter
+          $('.owl-item.active').prev('.owl-item').children('.item').addClass('grayscale');
+        }
+      });
+
+      // Initial setup to apply grayscale to the first left item
+      var $initialActiveItem = $('.owl-item.active .item');
+      $('.owl-item.active').prev('.owl-item').children('.item').addClass('grayscale');
+    });
+
+    var userId = getParams("userId") ? getParams("userId") : "";
+    var userName = getParams("userName") ? getParams("userName") : "";
+    var pageName = getParams("page") ? getParams("page") : "";
+    Number(userId);
+
+    // alert(window.location.href.slice(window.location.href.indexOf("?"), window.location.href.length));
+
+    function getParams(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function showbox() {
+      var box = document.querySelector(".box");
+
+      box.classList.add("active");
+
+    }
+
+    function closePopUp() {
+      var box = document.querySelector(".box");
+
+      box.classList.remove("active");
+
+    }
+
+    function sendSmsUrl() {
+
+      let path = window.location.href;
+      let queryParam = path.slice(path.indexOf("?"), path.length);
+      let url = `api${queryParam}`;
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      var data = JSON.stringify({
+        "type": "pokerVipOptin"
+      });
+      fetch(url, {
+        method: "POST",
+        body: data,
+        headers: myHeaders,
+        redirect: 'follow'
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          res = JSON.stringify(res);
+          localStorage.setItem("linkSent", "1");
+          document.getElementById("sendLink").removeAttribute("onclick", "sendSmsUrl()");
+          document.getElementById("sendLink").setAttribute("disabled", "false");
+          showbox();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      checkMod();
+      if (localStorage.getItem("linkSent") == null) {
+        document.getElementById("sendLink").setAttribute("onclick", "sendSmsUrl()");
+        document.getElementById("sendLink").removeAttribute("disabled");
+      }
+
+    });
+
+    function checkMod() {
+      let mod = userId % 43;
+      if (mod <= 21) {
+        document.getElementById("hideformod").style.display = "none";
+      } else if (22 <= mod && mod <= 42) {
+     console.log("test path");
+      } else {
+        document.getElementById("hideformod").style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>
