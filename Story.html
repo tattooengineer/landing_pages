@@ -943,10 +943,10 @@
         window.open(whatsappShareMesage, "_top");
       } else {
         // iOS Redirection: https://hwzt.in/Mzdy4mzLNJb 
-        redirection = "https://hwzat.in/IgqxxQtLNJb";
+      
 let textdata = data_text + redirection
 
-        const whatsappShareUrl = `https://hwzat.in/dl?dl_page_route=intent&link=` + `https://api.whatsapp.com/send?text=${encodeURIComponent(textdata)}&newtab=true`;
+        const whatsappShareUrl =  `https://api.whatsapp.com/send?text=${encodeURIComponent(textdata)}&newtab=true`;
         window.top.location.href = whatsappShareUrl;
       }
 
@@ -965,7 +965,7 @@ let textdata = data_text + redirection
       if (userId == "") {
         return false;
       }
-      let isOptInUrl = "https://corvus.howzat.com/v2/click-stream-catpure";
+ 
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       var data = JSON.stringify({
@@ -987,7 +987,7 @@ let textdata = data_text + redirection
         .then((res) => {
           if (res.status == true) {
            if(label == "WC-1stMatch-IPLRecap-JoinNow"){
-            window.location.href = "https://hwzt.in/dl?dl_page_route=lobby1&dl_sport_type=1&enableDeepLinking=true&dl_unique_id=1235&dl_leagueId=34914" ;
+
            }
           } else {
             console.log("not captured");
@@ -1050,7 +1050,7 @@ let textdata = data_text + redirection
       // let type = "once";
       let type = "everyday";
 
-      let isOptInUrl = "https://corvus.howzat.com/v2/howzat-recap/2023";
+    
 
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
